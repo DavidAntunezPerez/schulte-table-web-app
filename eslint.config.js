@@ -6,18 +6,27 @@ import tseslint from 'typescript-eslint'
 import { globalIgnores } from 'eslint/config'
 
 export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-  },
+	globalIgnores(['dist']),
+	{
+		files: ['**/*.{ts,tsx}'],
+		extends: [
+			js.configs.recommended,
+			tseslint.configs.recommended,
+			reactHooks.configs['recommended-latest'],
+			reactRefresh.configs.vite,
+		],
+		languageOptions: {
+			ecmaVersion: 2020,
+			globals: globals.browser,
+		},
+		rules: {
+			quotes: ['error', 'single'],
+			semi: ['error', 'never'],
+			indent: ['error', 'tab', { SwitchCase: 1 }, { flatTernaryExpressions: true }],
+			'object-curly-spacing': ['error', 'always'],
+			'comma-dangle': ['error', 'always-multiline'],
+			'space-before-function-paren': ['error', 'never'],
+			'arrow-spacing': ['error', { before: true, after: true }],
+		},
+	},
 ])
