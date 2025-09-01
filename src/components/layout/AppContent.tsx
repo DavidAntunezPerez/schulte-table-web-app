@@ -10,7 +10,7 @@ export default function AppContent() {
 				{cells.map((num, i) => (
 					<div
 						key={num}
-						className={`flex justify-center items-center cursor-pointer select-none hover:bg-[#222] bg-[#2c2c2c] text-[#fafafa] font-bold aspect-square text-5xl ${getCellClasses(
+						className={`flex justify-center items-center cursor-pointer select-none active:scale-[0.92] transition-all duration-200 hover:bg-[#222] bg-[#2c2c2c] text-[#fafafa] font-bold aspect-square text-5xl ${getCellClasses(
 							i,
 							gridSize
 						)}`}
