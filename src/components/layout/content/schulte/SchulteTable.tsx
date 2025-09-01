@@ -11,7 +11,7 @@ export default function SchulteCounter() {
 	const [currentNumber, setCurrentNumber] = useState<number>(1)
 
 	return (
-		<div className="flex flex-col justify-center items-center w-full h-full p-4 gap-4">
+		<div className="flex flex-col justify-start pt-4 items-center w-full h-full p-4 gap-4">
 			<div className="flex flex-col items-center justify-center text-3xl uppercase">
 				<span>Current number:</span> <span className="text-[4rem] font-bold">{currentNumber}</span>{' '}
 			</div>
