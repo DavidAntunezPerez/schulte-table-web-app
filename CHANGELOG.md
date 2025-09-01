@@ -1,5 +1,10 @@
 # Project Changelog
 
+## 0.3.0
+
+- Added Current number counter
+- Added limit number
+
 ## 0.2.0
 
 -   Added App logo
