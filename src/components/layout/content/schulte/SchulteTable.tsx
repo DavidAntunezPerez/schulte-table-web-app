@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { getCellClasses, shuffle } from '../../../../utils/content.utils'
-import { Button } from '@heroui/react'
+import { Button, Modal, useDisclosure } from '@heroui/react'
 import Confetti from 'react-confetti'
+import SchulteModal from './SchulteModal'
 
 export default function SchulteCounter() {
 	// TODOS: Add final card
-	// TODOS: Add restart button
 	// TODOS: Add click sounds
 
 	const gridSize = 5
-	const limitNumber = 25
+	const limitNumber = 3
 	const [cells, setCells] = useState(() => {
 		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
 		return shuffle(arr)
@@ -17,6 +17,8 @@ export default function SchulteCounter() {
 
 	const [currentNumber, setCurrentNumber] = useState<number>(1)
 	const [isFinished, setIsFinished] = useState(false)
+
+	const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
 	const handleRestart = () => {
 		// reset number
@@ -45,8 +47,8 @@ export default function SchulteCounter() {
 						)}`}
 						onClick={() => {
 							if (num === limitNumber && currentNumber === limitNumber) {
-								//TODO: Add custom modal to show results
 								setIsFinished(true)
+								onOpen()
 								console.log('Table finished')
 							} else if (num === currentNumber) {
 								setCurrentNumber(currentNumber + 1)
@@ -60,6 +62,9 @@ export default function SchulteCounter() {
 			<Button variant="light" size="lg" radius="lg" className="text-[#fafafa] font-bold" onPress={handleRestart}>
 				Restart
 			</Button>
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+				<SchulteModal onRestart={handleRestart} />
+			</Modal>
 		</div>
 	)
 }
