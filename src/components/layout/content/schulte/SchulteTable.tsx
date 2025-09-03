@@ -5,7 +5,6 @@ import Confetti from 'react-confetti'
 import SchulteModal from './SchulteModal'
 
 export default function SchulteCounter() {
-	// TODOS: Add final card
 	// TODOS: Add click sounds
 
 	const gridSize = 5
