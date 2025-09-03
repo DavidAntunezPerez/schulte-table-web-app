@@ -4,6 +4,7 @@
 
 - Added Current number counter
 - Added limit number
+- Improved shuffling performance and randomness
 
 ## 0.2.0
 
