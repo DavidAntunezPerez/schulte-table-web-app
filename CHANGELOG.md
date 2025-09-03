@@ -1,5 +1,10 @@
 # Project Changelog
 
+## 0.4.0
+
+- Added Restart button
+- Improved table styles and spacing
+
 ## 0.3.0
 
 - Added Current number counter
