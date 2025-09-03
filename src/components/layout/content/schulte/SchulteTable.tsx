@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { getCellClasses, shuffle } from '../../../../utils/content.utils'
 import { Button } from '@heroui/react'
+import Confetti from 'react-confetti'
 
 export default function SchulteCounter() {
-	// TODOS: Add confetti
 	// TODOS: Add final card
 	// TODOS: Add restart button
 	// TODOS: Add click sounds
@@ -16,10 +16,12 @@ export default function SchulteCounter() {
 	})
 
 	const [currentNumber, setCurrentNumber] = useState<number>(1)
+	const [isFinished, setIsFinished] = useState(false)
 
 	const handleRestart = () => {
 		// reset number
 		setCurrentNumber(1)
+		setIsFinished(false)
 
 		// shuffle new grid
 		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
@@ -28,6 +30,7 @@ export default function SchulteCounter() {
 
 	return (
 		<div className="flex flex-col justify-start pt-4 items-center w-full h-full p-4 gap-4">
+			{isFinished && <Confetti width={window.innerWidth} height={window.innerHeight} />}
 			<div className="w-full max-w-[70vmin] flex flex-col items-center justify-center">
 				<span className="text-3xl uppercase">Current number:</span>
 				<span className="text-[4rem] font-bold">{currentNumber}</span>
@@ -43,6 +46,7 @@ export default function SchulteCounter() {
 						onClick={() => {
 							if (num === limitNumber && currentNumber === limitNumber) {
 								//TODO: Add custom modal to show results
+								setIsFinished(true)
 								console.log('Table finished')
 							} else if (num === currentNumber) {
 								setCurrentNumber(currentNumber + 1)
@@ -53,13 +57,7 @@ export default function SchulteCounter() {
 					</div>
 				))}
 			</div>
-			<Button
-				variant="light"
-				size="lg"
-				radius="lg"
-				className="text-[#fafafa] font-bold"
-				onPress={handleRestart}
-			>
+			<Button variant="light" size="lg" radius="lg" className="text-[#fafafa] font-bold" onPress={handleRestart}>
 				Restart
 			</Button>
 		</div>
