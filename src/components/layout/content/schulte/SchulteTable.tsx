@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react'
-import getCellClasses from '../../../../utils/content.utils'
+import { getCellClasses, shuffle } from '../../../../utils/content.utils'
 
 export default function SchulteCounter() {
 	const gridSize = 5
 	const limitNumber = 25
-	const cells = useMemo(
-		() => Array.from({ length: gridSize * gridSize }, (_, i) => i + 1).sort(() => Math.random() - 0.5),
-		[]
-	)
+	const cells = useMemo(() => {
+		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
+		return shuffle(arr)
+	}, [gridSize])
+
 	const [currentNumber, setCurrentNumber] = useState<number>(1)
 
 	return (
