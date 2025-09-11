@@ -8,7 +8,7 @@ export default function SchulteCounter() {
 	// TODOS: Add click sounds
 
 	const gridSize = 5
-	const limitNumber = 25
+	const limitNumber = 3
 	const [cells, setCells] = useState(() => {
 		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
 		return shuffle(arr)
@@ -30,8 +30,14 @@ export default function SchulteCounter() {
 	}
 
 	return (
-		<div className="flex flex-col justify-start pt-4 items-center w-full h-full p-4 gap-4">
-			{isFinished && <Confetti width={window.innerWidth} height={window.innerHeight} />}
+		<div className="flex flex-col items-center justify-center flex-1 gap-4 p-4 box-border overflow-hidden">
+			{isFinished && (
+				<Confetti
+					className="absolute inset-0 overflow-hidden"
+					width={window.innerWidth}
+					height={window.innerHeight}
+				/>
+			)}
 			<div className="w-full max-w-[70vmin] flex flex-col items-center justify-center">
 				<span className="text-3xl uppercase">Current number:</span>
 				<span className="text-[4rem] font-bold">{currentNumber}</span>
