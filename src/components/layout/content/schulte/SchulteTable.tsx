@@ -8,7 +8,7 @@ export default function SchulteCounter() {
 	// TODOS: Add click sounds
 
 	const gridSize = 5
-	const limitNumber = 3
+	const limitNumber = 25
 	const [cells, setCells] = useState(() => {
 		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
 		return shuffle(arr)
