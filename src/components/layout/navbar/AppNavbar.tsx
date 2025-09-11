@@ -16,6 +16,9 @@ import ContactModal from './ContactModal'
 import packageJson from '../../../../package.json'
 import { EMAIL_URL, GITHUB_URL, LINKEDIN_URL } from '../../../global.constants'
 
+// TODO: Add a section in about called "What is Schulte Table" to inform user
+// TODO: Update README.md for this project
+
 /**
  * AppNavbar
  * - Thin wrapper that manages which modal content to render.
