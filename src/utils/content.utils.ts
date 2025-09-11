@@ -17,3 +17,9 @@ export function shuffle<T>(array: T[]): T[] {
 	}
 	return result
 }
+
+export function formatTime(ms: number): string {
+	const seconds = Math.floor(ms / 1000)
+	const milliseconds = ms % 1000
+	return `${seconds}.${milliseconds.toString().padStart(3, '0')}s`
+}
