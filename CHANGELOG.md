@@ -1,5 +1,11 @@
 # Project Changelog
 
+## 0.7.0
+
+- Refactored the whole Navbar
+- Added Contact button in navbar with a form working with emailjs
+- Added About button with additional project information
+
 ## 0.6.0
 
 - Added Correct and Error sound on number click

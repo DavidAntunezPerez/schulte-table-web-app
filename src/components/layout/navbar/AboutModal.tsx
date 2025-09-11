@@ -1,20 +1,15 @@
 import { ModalHeader, ModalBody, ModalFooter, Button } from '@heroui/react'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa6'
 import { TbMailFilled } from 'react-icons/tb'
-
-type Props = {
-	version: string
-	linkedin: string
-	github: string
-	emailUrl: string
-}
+import { EMAIL_URL, GITHUB_URL, LINKEDIN_URL } from '../../../global.constants'
+import packageJson from '../../../../package.json'
 
 /**
  * AboutModal
  * - Presentational component for "About this project".
  * - Pure and easy to test.
  */
-export default function AboutModal({ version, linkedin, github, emailUrl }: Props) {
+export default function AboutModal() {
 	return (
 		<>
 			<ModalHeader className="flex flex-col gap-1">About this project</ModalHeader>
@@ -24,14 +19,14 @@ export default function AboutModal({ version, linkedin, github, emailUrl }: Prop
 						This project was made by <span className="font-bold">David Antúnez Pérez</span>
 					</p>
 					<p>Please, support it by dropping a star on the repository and following me on socials.</p>
-					<p className="text-sm opacity-50">Version {version}</p>
+					<p className="text-sm opacity-50">Version {packageJson.version}</p>
 				</div>
 			</ModalBody>
 
 			<ModalFooter className="flex justify-around items-center">
 				<Button
 					as="a"
-					href={emailUrl}
+					href={EMAIL_URL}
 					isIconOnly
 					size="md"
 					color="default"
@@ -44,7 +39,7 @@ export default function AboutModal({ version, linkedin, github, emailUrl }: Prop
 
 				<Button
 					as="a"
-					href={linkedin}
+					href={LINKEDIN_URL}
 					isIconOnly
 					size="md"
 					color="primary"
@@ -57,7 +52,7 @@ export default function AboutModal({ version, linkedin, github, emailUrl }: Prop
 
 				<Button
 					as="a"
-					href={github}
+					href={GITHUB_URL}
 					isIconOnly
 					size="md"
 					color="default"

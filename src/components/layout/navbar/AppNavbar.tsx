@@ -13,8 +13,6 @@ import { FaCircleInfo } from 'react-icons/fa6'
 import { AppLogo } from '../../../utils/logos.utils'
 import AboutModal from './AboutModal'
 import ContactModal from './ContactModal'
-import packageJson from '../../../../package.json'
-import { EMAIL_URL, GITHUB_URL, LINKEDIN_URL } from '../../../global.constants'
 
 // TODO: Add a section in about called "What is Schulte Table" to inform user
 // TODO: Update README.md for this project
@@ -69,18 +67,7 @@ export default function AppNavbar() {
 				}}
 			>
 				<ModalContent>
-					{() =>
-						modalType === 'about' ? (
-							<AboutModal
-								version={packageJson.version}
-								linkedin={LINKEDIN_URL}
-								github={GITHUB_URL}
-								emailUrl={EMAIL_URL}
-							/>
-						) : (
-							<ContactModal onClose={onOpenChange} />
-						)
-					}
+					{() => (modalType === 'about' ? <AboutModal /> : <ContactModal onClose={onOpenChange} />)}
 				</ModalContent>
 			</Modal>
 		</>
