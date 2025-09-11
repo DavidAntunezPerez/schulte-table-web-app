@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { getCellClasses, shuffle, formatTime } from '../../../../utils/content.utils'
+import { getCellClasses, shuffle, formatTime, playSound } from '../../../../utils/content.utils'
 import { Button, Modal, useDisclosure } from '@heroui/react'
 import Confetti from 'react-confetti'
 import SchulteModal from './SchulteModal'
 
 export default function SchulteCounter() {
 	const gridSize = 5
-	const limitNumber = 3
+	const limitNumber = 25
 	const [cells, setCells] = useState(() => {
 		const arr = Array.from({ length: gridSize * gridSize }, (_, i) => i + 1)
 		return shuffle(arr)
@@ -61,11 +61,15 @@ export default function SchulteCounter() {
 							}
 
 							if (num === limitNumber && currentNumber === limitNumber) {
+								playSound('correct')
 								setIsFinished(true)
 								setEndTime(Date.now())
 								onOpen()
 							} else if (num === currentNumber) {
+								playSound('correct')
 								setCurrentNumber(currentNumber + 1)
+							} else {
+								playSound('error')
 							}
 						}}
 					>
