@@ -11,6 +11,7 @@ const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? ''
 const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID ?? ''
 
 type Payload = {
+	app_name: string
 	from_name: string
 	from_email: string
 	from_message: string

@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { ModalHeader, ModalBody, ModalFooter, Button, Input, Textarea } from '@heroui/react'
 import { FaPaperPlane } from 'react-icons/fa6'
 import { sendContactEmail } from '../../../utils/email.utils'
+import packageJson from '../../../../package.json'
 
 type Props = {
 	onClose: () => void
@@ -55,6 +56,7 @@ export default function ContactModal({ onClose }: Props) {
 		setIsSubmitting(true)
 		try {
 			await sendContactEmail({
+				app_name: packageJson.name,
 				from_name: `${name} ${surname}`,
 				from_email: email,
 				from_message: message,
