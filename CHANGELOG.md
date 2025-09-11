@@ -1,5 +1,11 @@
 # Project Changelog
 
+## 0.6.0
+
+- Added Correct and Error sound on number click
+- Added modal final timer when finishing the table
+- Fixed scroll issues in smaller screens
+
 ## 0.5.0
 
 -   Added custom modal when finishing the table and handling restart option in modal
