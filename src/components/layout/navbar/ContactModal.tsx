@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { ModalHeader, ModalBody, ModalFooter, Button, Input, Textarea } from '@heroui/react'
+import { ModalHeader, ModalBody, ModalFooter, Button, Input, Textarea, addToast } from '@heroui/react'
 import { FaPaperPlane } from 'react-icons/fa6'
 import { sendContactEmail } from '../../../utils/email.utils'
 import packageJson from '../../../../package.json'
@@ -62,11 +62,61 @@ export default function ContactModal({ onClose }: Props) {
 				from_message: message,
 			})
 
+			addToast({
+				title: 'Successfully Sent',
+				description: 'Your message has been successfully sent!',
+				classNames: {
+					closeButton: 'opacity-100 absolute right-4 top-1/2 -translate-y-1/2',
+				},
+				variant: 'flat',
+				color: 'primary',
+				icon: <FaPaperPlane />,
+				closeIcon: (
+					<svg
+						fill="none"
+						height="32"
+						stroke="currentColor"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						viewBox="0 0 24 24"
+						width="32"
+					>
+						<path d="M18 6 6 18" />
+						<path d="m6 6 12 12" />
+					</svg>
+				),
+			})
+
 			// close modal after success and reset form
 			resetForm()
 			onClose()
 		} catch (err) {
-			// In a real app, display a toast / inline error
+			addToast({
+				title: 'Could not send',
+				description: 'There was an error. Please contact an administrator.',
+				classNames: {
+					closeButton: 'opacity-100 absolute right-4 top-1/2 -translate-y-1/2',
+				},
+				variant: 'flat',
+				color: 'danger',
+				icon: <FaPaperPlane />,
+				closeIcon: (
+					<svg
+						fill="none"
+						height="32"
+						stroke="currentColor"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
+						viewBox="0 0 24 24"
+						width="32"
+					>
+						<path d="M18 6 6 18" />
+						<path d="m6 6 12 12" />
+					</svg>
+				),
+			})
 			console.error('send email error', err)
 			setIsSubmitting(false)
 		}

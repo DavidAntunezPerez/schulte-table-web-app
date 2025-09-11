@@ -5,6 +5,7 @@
 - Refactored the whole Navbar
 - Added Contact button in navbar with a form working with emailjs
 - Added About button with additional project information
+- Added toast service to handle mail send and other notifications
 
 ## 0.6.0
 
