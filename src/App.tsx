@@ -4,9 +4,9 @@ import AppNavbar from './components/layout/AppNavbar'
 
 function App() {
 	return (
-		<div className="flex flex-col items-center w-screen h-screen">
+		<div className="flex flex-col w-full min-h-screen overflow-hidden">
 			<AppNavbar />
-				<AppContent />
+			<AppContent />
 		</div>
 	)
 }
