@@ -1,6 +1,6 @@
 import './App.css'
 import AppContent from './components/layout/content/AppContent'
-import AppNavbar from './components/layout/AppNavbar'
+import AppNavbar from './components/layout/navbar/AppNavbar'
 
 function App() {
 	return (
