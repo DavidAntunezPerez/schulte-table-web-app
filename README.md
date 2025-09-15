@@ -91,13 +91,13 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 ## Roadmap
 
--   [x] Core Schulte table development
--   [x] Navbar + Contact & About functionalities
--   [x] Timer and restart table functionalities
--   [x] Correct number / Wrong number clicked sounds
--   [] Multilanguage compatibility and selector
--   [] Light mode + toggle theme option
--   [] Reversed table mode
+* [x] Core Schulte table development
+* [x] Navbar + Contact & About functionalities
+* [x] Timer and restart table functionalities
+* [x] Correct number / Wrong number clicked sounds
+* [ ] Multilanguage compatibility and selector
+* [ ] Light mode + toggle theme option
+* [ ] Reversed table mode
 
 ---
 
