@@ -1,17 +1,23 @@
 # Project Changelog
 
+## 1.0.0
+
+-   Fixed mobile responsivity issues and font sizes
+-   Updated About modal adding the section "What is a Schulte table?"
+-   Updated README.md information with a complete repository information
+
 ## 0.7.0
 
-- Refactored the whole Navbar
-- Added Contact button in navbar with a form working with emailjs
-- Added About button with additional project information
-- Added toast service to handle mail send and other notifications
+-   Refactored the whole Navbar
+-   Added Contact button in navbar with a form working with emailjs
+-   Added About button with additional project information
+-   Added toast service to handle mail send and other notifications
 
 ## 0.6.0
 
-- Added Correct and Error sound on number click
-- Added modal final timer when finishing the table
-- Fixed scroll issues in smaller screens
+-   Added Correct and Error sound on number click
+-   Added modal final timer when finishing the table
+-   Fixed scroll issues in smaller screens
 
 ## 0.5.0
 
