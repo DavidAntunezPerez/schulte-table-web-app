@@ -1,6 +1,6 @@
 # Schulte Table Web App
 
-![Version](https://img.shields.io/badge/dynamic/json?label=version&query=$.version&url=https://raw.githubusercontent.com/DavidAntunezPerez/schulte-table-web-app/refs/heads/main/package.json)
+![Version](https://img.shields.io/badge/dynamic/json?label=version&query=$.version&url=https://raw.githubusercontent.com/DavidAntunezPerez/schulte-table-web-app/refs/heads/main/package.json&color=green)
 ![React](https://img.shields.io/badge/React-19.1.1-61dafb?logo=react)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-Frontend%20Build-646cff?logo=vite&logoColor=yellow)](https://vitejs.dev/)
