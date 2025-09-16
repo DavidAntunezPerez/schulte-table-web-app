@@ -42,15 +42,15 @@ export default function SchulteTable() {
 					height={window.innerHeight}
 				/>
 			)}
-			<div className="w-full max-w-[70vmin] flex flex-col items-center justify-center">
+			<div className="w-full max-w-[70vmin] xl:flex flex-col items-center justify-center">
 				<span className="text-3xl uppercase">Current number:</span>
 				<span className="text-4xl md:text-[4rem] font-bold">{currentNumber}</span>
 			</div>
-			<div className="w-full max-w-[70vmin] max-h-[70vmin] aspect-square border-4 border-[#fafafa] bg-[#fafafa] rounded-[1.8rem] grid grid-cols-5 grid-rows-5 gap-1 overflow-hidden box-border">
+			<div className="w-full max-w-[70vmin] max-h-[70vmin] aspect-square border-4 border-[#fafafa] bg-[#fafafa] rounded-[1.8rem] grid grid-cols-5 grid-rows-5 overflow-hidden box-border">
 				{cells.map((num, i) => (
 					<div
 						key={num}
-						className={`flex justify-center items-center cursor-pointer select-none active:scale-[0.92] transition-all duration-200 hover:bg-[#222] bg-[#3a3a3a] text-[#fafafa] font-bold aspect-square text-4xl md:text-5xl ${getCellClasses(
+						className={`flex justify-center items-center cursor-pointer select-none active:scale-[0.92] transition-all duration-200 hover:bg-[#222] bg-[#3a3a3a] text-[#fafafa] font-bold aspect-square text-4xl md:text-5xl border-2 border-[#fafafa] ${getCellClasses(
 							i,
 							gridSize
 						)}`}
