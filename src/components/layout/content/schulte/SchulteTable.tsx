@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { getCellClasses, shuffle, formatTime, playSound } from '../../../../utils/content.utils'
+import { getCellClasses, shuffle, formatTime, playSound } from '@/utils/content.utils'
 import { Button, Modal, useDisclosure } from '@heroui/react'
 import Confetti from 'react-confetti'
 import SchulteModal from './SchulteModal'
