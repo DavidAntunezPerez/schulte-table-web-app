@@ -4,7 +4,7 @@ import { Button, Modal, useDisclosure } from '@heroui/react'
 import Confetti from 'react-confetti'
 import SchulteModal from './SchulteModal'
 
-export default function SchulteCounter() {
+export default function SchulteTable() {
 	const gridSize = 5
 	const limitNumber = 25
 	const [cells, setCells] = useState(() => {
@@ -34,7 +34,7 @@ export default function SchulteCounter() {
 	}
 
 	return (
-		<div className="flex flex-col items-center justify-around flex-1 gap-4 p-4 box-border overflow-hidden">
+		<div className="flex flex-col items-center justify-around flex-1 gap-2 p-4 box-border overflow-hidden">
 			{isFinished && (
 				<Confetti
 					className="absolute inset-0 overflow-hidden"
@@ -46,11 +46,11 @@ export default function SchulteCounter() {
 				<span className="text-3xl uppercase">Current number:</span>
 				<span className="text-4xl md:text-[4rem] font-bold">{currentNumber}</span>
 			</div>
-			<div className="w-full h-full max-w-[70vmin] max-h-[70vmin] border-4 border-[#fafafa] bg-[#fafafa] rounded-[1.8rem] grid grid-cols-5 grid-rows-5 gap-1 overflow-hidden">
+			<div className="w-full max-w-[70vmin] max-h-[70vmin] aspect-square border-4 border-[#fafafa] bg-[#fafafa] rounded-[1.8rem] grid grid-cols-5 grid-rows-5 gap-1 overflow-hidden box-border">
 				{cells.map((num, i) => (
 					<div
 						key={num}
-						className={`flex justify-center items-center cursor-pointer select-none active:scale-[0.92] transition-all duration-200 hover:bg-[#222] bg-[#3a3a3a] text-[#fafafa] font-bold aspect-square text-2xl md:text-5xl ${getCellClasses(
+						className={`flex justify-center items-center cursor-pointer select-none active:scale-[0.92] transition-all duration-200 hover:bg-[#222] bg-[#3a3a3a] text-[#fafafa] font-bold aspect-square text-4xl md:text-5xl ${getCellClasses(
 							i,
 							gridSize
 						)}`}
